@@ -1,0 +1,13 @@
+{
+  "id": "dhl",
+  "version": "0.1.0",
+  "contractVersion": "0.1",
+  "entry": "dist/index.js",
+  "displayName": "DHL",
+  "description": "DHL Express carrier shipping — rate quote stubs (Phase 2 B-04)",
+  "dependsOn": [],
+  "required": false,
+  "engines": {
+    "shipping": ["dhl"]
+  }
+}
