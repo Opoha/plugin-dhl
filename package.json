@@ -1,6 +1,6 @@
 {
   "name": "@opoha/plugin-dhl",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Official Opoha DHL carrier shipping plugin (Phase 2 B-04 rate quote stubs)",
   "license": "MIT",
   "type": "module",
@@ -22,7 +22,7 @@
   ],
   "opoha": {
     "id": "dhl",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "contractVersion": "0.1",
     "entry": "dist/index.js",
     "displayName": "DHL",
@@ -30,7 +30,9 @@
     "dependsOn": [],
     "required": false,
     "engines": {
-      "shipping": ["dhl"]
+      "shipping": [
+        "dhl"
+      ]
     }
   },
   "scripts": {

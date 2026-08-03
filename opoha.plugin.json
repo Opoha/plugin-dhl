@@ -1,6 +1,6 @@
 {
   "id": "dhl",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "contractVersion": "0.1",
   "entry": "dist/index.js",
   "displayName": "DHL",
@@ -8,6 +8,8 @@
   "dependsOn": [],
   "required": false,
   "engines": {
-    "shipping": ["dhl"]
+    "shipping": [
+      "dhl"
+    ]
   }
 }
