@@ -45,14 +45,14 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@opoha/plugin-sdk": "file:../opoha-plugin-sdk",
+    "@opoha/plugin-sdk": "^1.0.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "0.3.27",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@opoha/typescript-config": "file:../opoha-devkit/packages/typescript-config",
-    "@opoha/vitest-config": "file:../opoha-devkit/packages/vitest-config",
+    "@opoha/typescript-config": "^1.0.0",
+    "@opoha/vitest-config": "^1.0.0",
     "@types/node": "^22.13.10",
     "typescript": "^5.8.2",
     "vitest": "^3.0.8"
