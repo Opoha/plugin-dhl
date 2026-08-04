@@ -3,3 +3,8 @@ packages:
 
 allowBuilds:
   esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@opoha/plugin-sdk@1.0.0'
+  - '@opoha/typescript-config@1.0.0'
+  - '@opoha/vitest-config@1.0.0'
