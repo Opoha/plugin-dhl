@@ -3,3 +3,8 @@ dist
 *.log
 .DS_Store
 coverage
+
+# Local secrets — never commit
+.env
+.env.*
+!.env.example
