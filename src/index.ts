@@ -187,7 +187,7 @@ export const dhlShippingMethod: ShippingMethodProvider = {
 };
 
 /**
- * Official DHL carrier plugin (Phase 2 B-04).
+ * Official DHL carrier plugin.
  * Registers shipping method rate-quote stubs + admin settings + GraphQL config.
  * Live DHL SDK / secrets are intentionally out of scope for this scaffold.
  */

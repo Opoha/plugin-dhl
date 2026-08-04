@@ -1,6 +1,6 @@
 # DHL Shipping Plugin
 
-Official `@opoha/plugin-dhl` — registers a DHL Express carrier shipping method with the Opoha shipping engine (Phase 2 B-04).
+Official `@opoha/plugin-dhl` — registers a DHL Express carrier shipping method with the Opoha shipping engine.
 
 ## What it registers
 
@@ -11,7 +11,7 @@ Official `@opoha/plugin-dhl` — registers a DHL Express carrier shipping method
 
 ## Scope
 
-Account credentials (API key/secret) are env-only and never persisted or logged. This scaffold uses DHL-shaped stub responses only — no live DHL SDK/API call is made (Phase 2 B-04 exit: carrier plugin registers quotes).
+Account credentials (API key/secret) are env-only and never persisted or logged. This scaffold uses DHL-shaped stub responses only — no live DHL SDK/API call is made.
 
 ## Load
 
