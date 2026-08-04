@@ -8,8 +8,6 @@
   "dependsOn": [],
   "required": false,
   "engines": {
-    "shipping": [
-      "dhl"
-    ]
+    "shipping": ["dhl"]
   }
 }

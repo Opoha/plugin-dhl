@@ -18,9 +18,4 @@ export const MIGRATIONS_TABLE_NAME = 'opoha_migrations_dhl' as const;
 export const entities = dhlEntities;
 export const migrations = dhlMigrations;
 
-export {
-  DhlSettingsEntity,
-  DhlInit1722696200000,
-  dhlEntities,
-  dhlMigrations,
-};
+export { DhlSettingsEntity, DhlInit1722696200000, dhlEntities, dhlMigrations };

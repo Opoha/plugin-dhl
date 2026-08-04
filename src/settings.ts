@@ -19,8 +19,7 @@ export const dhlShippingConfigSchema = z.object({
 export type DhlShippingConfig = z.infer<typeof dhlShippingConfigSchema>;
 
 /** Default config when no row / env / mutation has configured the method. */
-export const DEFAULT_DHL_SHIPPING_CONFIG: DhlShippingConfig =
-  dhlShippingConfigSchema.parse({});
+export const DEFAULT_DHL_SHIPPING_CONFIG: DhlShippingConfig = dhlShippingConfigSchema.parse({});
 
 let runtimeConfig: DhlShippingConfig = { ...DEFAULT_DHL_SHIPPING_CONFIG };
 
@@ -37,9 +36,7 @@ function parseBoolEnv(raw: string, varName: string): boolean {
  * Optional env bootstrap (OPOHA_DHL_*). Applied at boot when present.
  * Account API key/secret never read into persisted config — env-only at call time later.
  */
-export function dhlConfigFromEnv(
-  env: NodeJS.ProcessEnv = process.env,
-): Partial<DhlShippingConfig> {
+export function dhlConfigFromEnv(env: NodeJS.ProcessEnv = process.env): Partial<DhlShippingConfig> {
   const partial: Partial<DhlShippingConfig> = {};
   const account = env.OPOHA_DHL_ACCOUNT_NUMBER?.trim();
   if (account) {
@@ -48,9 +45,7 @@ export function dhlConfigFromEnv(
   const origin = env.OPOHA_DHL_ORIGIN_COUNTRY?.trim().toUpperCase();
   if (origin) {
     if (!/^[A-Z]{2}$/.test(origin)) {
-      throw new Error(
-        `OPOHA_DHL_ORIGIN_COUNTRY must be a 2-letter ISO code (got ${origin})`,
-      );
+      throw new Error(`OPOHA_DHL_ORIGIN_COUNTRY must be a 2-letter ISO code (got ${origin})`);
     }
     partial.originCountryCode = origin;
   }
@@ -71,9 +66,7 @@ export function getDhlShippingConfig(): DhlShippingConfig {
 }
 
 /** Merge + validate into the runtime config (does not persist). */
-export function setDhlShippingConfig(
-  input: Partial<DhlShippingConfig>,
-): DhlShippingConfig {
+export function setDhlShippingConfig(input: Partial<DhlShippingConfig>): DhlShippingConfig {
   runtimeConfig = dhlShippingConfigSchema.parse({
     ...runtimeConfig,
     ...input,
@@ -85,9 +78,7 @@ export function setDhlShippingConfig(
  * Bind plugin-owned TypeORM repository so load/persist use `dhl_settings`
  * (ADR-0005 / ADR-0010). Host may call after DataSource is ready.
  */
-export function bindDhlSettingsRepository(
-  repo: Repository<DhlSettingsEntity>,
-): void {
+export function bindDhlSettingsRepository(repo: Repository<DhlSettingsEntity>): void {
   settingsRepo = repo;
 }
 

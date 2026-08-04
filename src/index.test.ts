@@ -1,11 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 
-import {
-  MIGRATIONS_TABLE_NAME,
-  PLUGIN_ID,
-  entities,
-  migrations,
-} from './database.js';
+import { MIGRATIONS_TABLE_NAME, PLUGIN_ID, entities, migrations } from './database.js';
 import dhlPlugin, {
   DEFAULT_DHL_SHIPPING_CONFIG,
   buildDhlExpressRatesStub,
@@ -60,28 +55,30 @@ describe('@opoha/plugin-dhl', () => {
     const providers: Array<{ token: string }> = [];
     const admin: unknown[] = [];
 
-    dhlPlugin.boot?.(createStubPluginContext('dhl', {
-      registerGraphQL(input) {
-        graphql.push({ name: input.name, kind: input.kind });
-      },
-      registerProvider(input) {
-        providers.push({ token: input.token });
-      },
-      registerListener() {},
-      registerAdmin(contribution) {
-        admin.push(contribution);
-      },
-      registerPaymentProvider() {},
-      registerShippingMethod(method) {
-        shipping.push({
-          code: method.code,
-          displayName: method.displayName,
-          hasQuote: typeof method.quoteRates === 'function',
-          hasCreateLabel: typeof method.createLabel === 'function',
-        });
-      },
-      registerStorageAdapter() {},
-    }));
+    dhlPlugin.boot?.(
+      createStubPluginContext('dhl', {
+        registerGraphQL(input) {
+          graphql.push({ name: input.name, kind: input.kind });
+        },
+        registerProvider(input) {
+          providers.push({ token: input.token });
+        },
+        registerListener() {},
+        registerAdmin(contribution) {
+          admin.push(contribution);
+        },
+        registerPaymentProvider() {},
+        registerShippingMethod(method) {
+          shipping.push({
+            code: method.code,
+            displayName: method.displayName,
+            hasQuote: typeof method.quoteRates === 'function',
+            hasCreateLabel: typeof method.createLabel === 'function',
+          });
+        },
+        registerStorageAdapter() {},
+      }),
+    );
 
     expect(shipping).toEqual([
       {
@@ -204,8 +201,6 @@ describe('@opoha/plugin-dhl', () => {
 
     const downRunner = createQueryRunnerMock();
     await migration.down(downRunner as never);
-    expect(downRunner.queries.join('\n')).toContain(
-      'DROP TABLE IF EXISTS "dhl_settings"',
-    );
+    expect(downRunner.queries.join('\n')).toContain('DROP TABLE IF EXISTS "dhl_settings"');
   });
 });

@@ -1,9 +1,4 @@
-import {
-  Column,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 /** OWNER: @opoha/plugin-dhl — settings row for DHL config (ADR-0005). */
 @Entity({ name: 'dhl_settings' })

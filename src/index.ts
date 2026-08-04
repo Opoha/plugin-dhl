@@ -115,8 +115,7 @@ export function mapDhlProductsToRateQuotes(
   const quotes: ShippingRateQuote[] = [];
   for (const product of response.products) {
     const bill =
-      product.totalPrice.find((p) => p.currencyType === 'BILLC') ??
-      product.totalPrice[0];
+      product.totalPrice.find((p) => p.currencyType === 'BILLC') ?? product.totalPrice[0];
     if (!bill) continue;
     const transit = product.deliveryCapabilities?.totalTransitDays;
     quotes.push({
@@ -158,10 +157,7 @@ export const dhlShippingMethod: ShippingMethodProvider = {
     if (!config.enabled) {
       return [];
     }
-    const stub = buildDhlExpressRatesStub(
-      input.currencyCode,
-      totalWeightGrams(input),
-    );
+    const stub = buildDhlExpressRatesStub(input.currencyCode, totalWeightGrams(input));
     return mapDhlProductsToRateQuotes(stub);
   },
 
@@ -179,9 +175,7 @@ export const dhlShippingMethod: ShippingMethodProvider = {
     };
   },
 
-  async voidLabel(
-    input: ShippingVoidLabelInput,
-  ): Promise<ShippingVoidLabelResult> {
+  async voidLabel(input: ShippingVoidLabelInput): Promise<ShippingVoidLabelResult> {
     return {
       status: 'voided',
       raw: {
@@ -231,8 +225,7 @@ export default definePlugin({
         resolve: async (
           _parent: unknown,
           args: { input?: Partial<DhlShippingConfig> },
-        ): Promise<DhlShippingConfig> =>
-          persistDhlShippingConfig(args.input ?? {}),
+        ): Promise<DhlShippingConfig> => persistDhlShippingConfig(args.input ?? {}),
       },
     });
 

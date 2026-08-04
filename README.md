@@ -24,9 +24,9 @@ Core discovers via `OPOHA_PLUGINS` / `OPOHA_PLUGINS_PATH` and dynamically import
 
 ## Env
 
-| Var | Purpose |
-|-----|---------|
-| `OPOHA_DHL_ACCOUNT_NUMBER` | DHL account number (non-secret identifier) |
-| `OPOHA_DHL_ORIGIN_COUNTRY` | 2-letter ISO origin country code for rate stubs |
-| `OPOHA_DHL_TEST_MODE` | `true`/`false` — stub always runs test-mode shaped responses |
-| `OPOHA_DHL_ENABLED` | `true`/`false` — disable to stop returning rates |
+| Var                        | Purpose                                                      |
+| -------------------------- | ------------------------------------------------------------ |
+| `OPOHA_DHL_ACCOUNT_NUMBER` | DHL account number (non-secret identifier)                   |
+| `OPOHA_DHL_ORIGIN_COUNTRY` | 2-letter ISO origin country code for rate stubs              |
+| `OPOHA_DHL_TEST_MODE`      | `true`/`false` — stub always runs test-mode shaped responses |
+| `OPOHA_DHL_ENABLED`        | `true`/`false` — disable to stop returning rates             |
