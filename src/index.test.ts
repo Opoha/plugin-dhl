@@ -18,6 +18,7 @@ import dhlPlugin, {
   setDhlShippingConfig,
 } from './index.js';
 import { DhlInit1722696200000 } from './migrations/1722696200000-DhlInit.js';
+import { createStubPluginContext } from '@opoha/plugin-sdk';
 
 function createQueryRunnerMock() {
   const queries: string[] = [];
@@ -59,8 +60,7 @@ describe('@opoha/plugin-dhl', () => {
     const providers: Array<{ token: string }> = [];
     const admin: unknown[] = [];
 
-    dhlPlugin.boot?.({
-      pluginId: 'dhl',
+    dhlPlugin.boot?.(createStubPluginContext('dhl', {
       registerGraphQL(input) {
         graphql.push({ name: input.name, kind: input.kind });
       },
@@ -81,7 +81,7 @@ describe('@opoha/plugin-dhl', () => {
         });
       },
       registerStorageAdapter() {},
-    });
+    }));
 
     expect(shipping).toEqual([
       {
