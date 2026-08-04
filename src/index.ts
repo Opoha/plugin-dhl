@@ -34,7 +34,7 @@ export {
 } from './settings.js';
 
 /**
- * DHL Express MyDHL API–shaped rate product stub (no DHL SDK — B-04 scaffold).
+ * DHL Express MyDHL API–shaped rate product stub (no DHL SDK).
  * Live API can replace stub body without changing ShippingRateQuote mapping.
  */
 export type DhlExpressProductStub = {

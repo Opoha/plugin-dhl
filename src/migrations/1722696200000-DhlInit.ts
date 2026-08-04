@@ -1,7 +1,7 @@
 import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 /**
- * Initial settings table for DHL plugin (B-04 / ADR-0005).
+ * Initial settings table for DHL plugin (ADR-0005).
  * Table prefix: plugin id `dhl` → `dhl_*`.
  */
 export class DhlInit1722696200000 implements MigrationInterface {

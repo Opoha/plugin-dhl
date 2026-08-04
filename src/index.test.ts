@@ -96,7 +96,7 @@ describe('@opoha/plugin-dhl', () => {
     expect(admin).toHaveLength(1);
   });
 
-  it('quoteRates returns DHL Express–shaped stub rates (B-04)', async () => {
+  it('quoteRates returns DHL Express–shaped stub rates', async () => {
     const rates = await dhlShippingMethod.quoteRates({
       currencyCode: 'EUR',
       destination: { countryCode: 'US', postalCode: '10001' },
@@ -155,7 +155,7 @@ describe('@opoha/plugin-dhl', () => {
     expect(voided.status).toBe('voided');
   });
 
-  it('persists config via TypeORM repository when bound (B-04)', async () => {
+  it('persists config via TypeORM repository when bound', async () => {
     const saved: Array<Record<string, unknown>> = [];
     const repo = {
       find: vi.fn(async () => (saved.length ? [saved[0]] : [])),
