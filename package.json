@@ -1,6 +1,6 @@
 {
   "name": "@opoha/plugin-dhl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official Opoha DHL carrier shipping plugin",
   "license": "MIT",
   "type": "module",
@@ -17,6 +17,8 @@
     }
   },
   "files": [
+    "LICENSE",
+    "README.md",
     "dist",
     "opoha.plugin.json"
   ],
